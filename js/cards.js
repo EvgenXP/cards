@@ -11,18 +11,22 @@ function getCard(){
     usedCards.push(usedCard);
     return usedCard;
 }
-function validCards(asd){
-    for (var i = 0; i < usedCards.length; i++){
-        return asd != usedCards[i];
+function validCards(){
+    if (usedCards.indexOf(usedCard)){
+        return 56;
     }
 }
 getCard();
 if (usedCards[0] == 16){
     console.log('Тебе жопа!');
-} else {
+}else{
     console.log('Ваша карта: ' + value[randomValue] + ' ' + suit[randomSuit]);
     getCard();
     while (usedCard != 16){
+        if (validCards() != 56){
+            getCard();
+            continue;
+        }
         console.log('Карта: ' + value[randomValue] + ' ' + suit[randomSuit]);
         getCard();
     }
@@ -30,4 +34,5 @@ if (usedCards[0] == 16){
 }
 console.log("Всего карт выпало: " + usedCards.length);
 console.log(usedCards);
-console.log(validCards(usedCard));
+console.log(validCards(25));
+console.log(usedCards.indexOf(25));
