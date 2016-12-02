@@ -11,8 +11,13 @@ function getCard(){
     usedCards.push(usedCard);
     return usedCard;
 }
+function validCards(asd){
+    for (var i = 0; i < usedCards.length; i++){
+        return asd != usedCards[i];
+    }
+}
 getCard();
-if (usedCards[0] == 16) {
+if (usedCards[0] == 16){
     console.log('Тебе жопа!');
 } else {
     console.log('Ваша карта: ' + value[randomValue] + ' ' + suit[randomSuit]);
@@ -25,3 +30,4 @@ if (usedCards[0] == 16) {
 }
 console.log("Всего карт выпало: " + usedCards.length);
 console.log(usedCards);
+console.log(validCards(usedCard));
