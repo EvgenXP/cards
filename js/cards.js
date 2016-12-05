@@ -8,31 +8,33 @@ function getCard(){
     randomSuit = Math.floor(Math.random() * suit.length);
     randomValue = Math.floor(Math.random() * value.length);
     usedCard = (randomSuit * 9) + randomValue + 1;
-    usedCards.push(usedCard);
     return usedCard;
 }
-function validCards(){
-    if (usedCards.indexOf(usedCard)){
-        return 56;
-    }
+function validCards(asd){
+    return usedCards.indexOf(asd) == -1;
+}
+function array(a, b) {
+    if (a > b) return 1;
+    if (a < b) return -1;
 }
 getCard();
+usedCards.push(usedCard);
 if (usedCards[0] == 16){
     console.log('Тебе жопа!');
 }else{
     console.log('Ваша карта: ' + value[randomValue] + ' ' + suit[randomSuit]);
     getCard();
     while (usedCard != 16){
-        if (validCards() != 56){
+        if (!validCards(usedCard)){
             getCard();
-            continue;
+        }else{
+            usedCards.push(usedCard);
+            console.log('Карта: ' + value[randomValue] + ' ' + suit[randomSuit]);
         }
-        console.log('Карта: ' + value[randomValue] + ' ' + suit[randomSuit]);
-        getCard();
     }
+    usedCards.push(usedCard);
     console.log('Queen of Spades');
 }
 console.log("Всего карт выпало: " + usedCards.length);
 console.log(usedCards);
-console.log(validCards(25));
-console.log(usedCards.indexOf(25));
+console.log(usedCards.sort(array));
