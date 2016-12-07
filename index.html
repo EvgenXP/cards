@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<p class="example" id="para1">Some text here</p>
+<p class="example">
+    <button onclick="changeColor('blue');">blue</button>
+    <button onclick="changeColor('red');">red</button>
+</p>
+<script>
+    function changeColor(newColor) {
+        var elem = document.getElementById("para1");
+        elem.style.color = newColor;
+    }
+</script>
 <script src="js/cards.js"></script>
 </body>
 </html>
