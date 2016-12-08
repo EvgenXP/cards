@@ -16,6 +16,12 @@
     function changeColor(newColor) {
         var elem = document.getElementById("para1");
         elem.style.color = newColor;
+        if (newColor == 'blue'){
+            elem.innerHTML = 'Hello!';
+        }else{
+            elem.innerHTML = 'World!';
+        }
+
     }
 </script>
 <script src="js/cards.js"></script>
